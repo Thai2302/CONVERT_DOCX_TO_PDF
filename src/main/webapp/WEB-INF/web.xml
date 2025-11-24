@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
+         https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>DOCX to PDF Converter</display-name>
+
+    <!-- Welcome File List -->
+    <welcome-file-list>
+        <welcome-file>view/login_view.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Login Controller -->
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.LoginController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- Register Controller -->
+    <servlet>
+        <servlet-name>RegisterController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.RegisterController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterController</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- Logout Controller -->
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.LogoutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- Upload Controller -->
+    <servlet>
+        <servlet-name>UploadController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.UploadController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadController</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
+    <!-- Job Status Controller -->
+    <servlet>
+        <servlet-name>JobStatusController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.JobStatusController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JobStatusController</servlet-name>
+        <url-pattern>/jobs</url-pattern>
+    </servlet-mapping>
+
+    <!-- Download Controller -->
+    <servlet>
+        <servlet-name>DownloadController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.DownloadController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DownloadController</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+
+    <!-- Delete Job Controller -->
+    <servlet>
+        <servlet-name>DeleteJobController</servlet-name>
+        <servlet-class>com.docxtopdf.controller.DeleteJobController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteJobController</servlet-name>
+        <url-pattern>/deleteJob</url-pattern>
+    </servlet-mapping>
+
+    <!-- Session Timeout (30 minutes) -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!-- Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/view/error_view.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/view/error_view.jsp</location>
+    </error-page>
+</web-app>
